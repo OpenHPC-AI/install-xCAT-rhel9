@@ -28,7 +28,9 @@ chmod +x setup_xcat.sh
 ./setup_xcat.sh
 ```
 
-[OR]
+**[OR]**
+
+# You can manually setup the xcat on el9 
 
 **`Step1: Download the go-xcat tool using wget:`**
 

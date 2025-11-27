@@ -21,6 +21,14 @@ Solution:
 ```jsx
 yum remove xCAT
 ```
+# To Quickly fix Just run the setup_xcat.sh script 
+
+```bash
+chmod +x setup_xcat.sh
+./setup_xcat.sh
+```
+
+[OR]
 
 **`Step1: Download the go-xcat tool using wget:`**
 

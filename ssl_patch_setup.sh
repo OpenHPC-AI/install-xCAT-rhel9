@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OPENSSL_FILE="/opt/xcat/share/xcat/ca/openssl.cnf.tmpl"
 OPENSSL_BACKUP_FILE="/opt/xcat/share/xcat/ca/openssl.cnf.tmpl.orig"
 DOCKERHOST_CERT_FILE="/opt/xcat/share/xcat/scripts/setup-dockerhost-cert.sh"
 DOCKERHOST_CERT_BACKUP_FILE="/opt/xcat/share/xcat/scripts/setup-dockerhost-cert.sh.orig"
+
+set -euo pipefail
+
+LOG() { printf "==> %s\n" "$*"; }
 
 if [[ -f "$OPENSSL_FILE" ]]; then
   LOG "Backing up openssl template (if not already present): $OPENSSL_BACKUP_FILE"
@@ -30,3 +34,4 @@ if [[ -f "$DOCKERHOST_CERT_FILE" ]]; then
 else
   LOG "File $DOCKERHOST_CERT_FILE not found — skipping dockerhost cert script patch."
 fi
+

@@ -83,36 +83,11 @@ NOTE:
 **Step3.**
 
 ```jsx
-cp /opt/xcat/share/xcat/ca/openssl.cnf.tmpl /opt/xcat/share/xcat/ca/openssl.cnf.tmpl.orig
-
-$vim /opt/xcat/share/xcat/ca/openssl.cnf.tmpl
-
-Comment out anything with "authorityKeyIdentifier" i.e.:
-fgrep authorityKeyIdentifier /opt/xcat/share/xcat/ca/openssl.cnf.tmpl
-
-#authorityKeyIdentifier=keyid,issuer
-#authorityKeyIdentifier=keyid,issuer
-#authorityKeyIdentifier=keyid:always,issuer
-# Only issuerAltName and authorityKeyIdentifier make any sense in a CRL.
-#authorityKeyIdentifier=keyid:always
-#authorityKeyIdentifier=keyid,issuer
-
+# Setup Openssl patch
+bash 
 ```
 
-**Step4.**
-
-```jsx
-cp /opt/xcat/share/xcat/scripts/setup-dockerhost-cert.sh /opt/xcat/share/xcat/scripts/setup-dockerhost-cert.sh.orig
-
-vim /opt/xcat/share/xcat/scripts/setup-dockerhost-cert.sh
-
-Change this line:
-openssl req -config ca/openssl.cnf -new -key ca/dockerhost-key.pem -out cert/dockerhost-req.pem -extensions server -subj "/CN=$CNA"
-to:
-openssl req -config ca/openssl.cnf -new -key ca/dockerhost-key.pem -out cert/dockerhost-req.pem -subj "/CN=$CNA"
-```
-
-**Step5**.
+**Step4**.
 
 **Source the profile to add xCAT Commands to your path:**
 

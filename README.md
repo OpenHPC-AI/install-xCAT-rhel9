@@ -84,7 +84,7 @@ NOTE:
 
 ```jsx
 # Setup Openssl patch
-bash 
+bash ssl_patch_setup.sh
 ```
 
 **Step4**.

@@ -23,7 +23,7 @@ yum remove xCAT
 ```
 # To Install xcat on rhel9 
 
-# git clone the repo
+**git clone the repo**
 
 
 
